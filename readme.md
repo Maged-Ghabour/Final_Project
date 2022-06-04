@@ -23,8 +23,8 @@
 
 ## Later 
 
-[ ]   Orders 
-[ ]   adding categories  
+- [ ]   Orders 
+- [ ]   adding categories  
 
 
 
