@@ -16,19 +16,19 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw "></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="form3Example1c" placeholder="Enter Your Name" class="form-control"
-                       [(ngModel)]="model.name" name="name" #name="ngModel"  required minlength="5"/>
-                       <div class="alert alert-danger" *ngIf="register.submitted && name.invalid">
+                      <input type="text"  placeholder="Enter Your Name" class="form-control"
+                       [(ngModel)]="model.name" name="name" #name="ngModel" minlength="5" maxlength="25" required/>
+
+                       <div class="alert alert-warning mt-2" *ngIf="register.submitted && name.invalid">
                         <div *ngIf="name.errors?.['required']">
-                          Name is required
+                          * Name is required
                         </div>
-                        <div *ngIf="name.errors?.['required']">
-                          minlength = 5
+                        <div *ngIf="name.errors?.['minlength'] || ['maxlength']" >
+                          * Name must be between 5 and 25 character
                         </div>
+
 
                        </div>
-
-
 
                     </div>
                   </div>
@@ -37,12 +37,16 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-person fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="form3Example1c" class="form-control" required placeholder="Enter Your Age"
-                      [(ngModel)]="model.age" name="age" #age="ngModel" />
-                      <div class="alert alert-danger text-center" *ngIf="register.submitted && email.invalid">
-                        <div *ngIf="name.errors?.['required']">
-                          Age is required
+                      <input type="number"  class="form-control" required placeholder="Enter Your Age"
+                      [(ngModel)]="model.age" name="age" #age="ngModel"   min="9"  max="70" />
+                      <div class="alert alert-warning mt-2" *ngIf="register.submitted && age.invalid">
+                        <div *ngIf="age.errors?.['required']">
+                          * Age is required
                         </div>
+                        <div *ngIf="age.errors?.['min']||['max']">
+                          * Age must be between than 9 and 70
+                        </div>
+
 
 
                        </div>
@@ -53,15 +57,20 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="email" id="form3Example3c" class="form-control" required placeholder="Enter Your Email"
-                      [(ngModel)]="model.email" name="email" #email="ngModel"/>
-                      <div class="alert alert-danger" *ngIf="register.submitted && email.invalid">
+                      <input type="email"  class="form-control"  placeholder="Enter Your Email"
+                      [(ngModel)]="model.email" name="email" #email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+                      <div class="alert alert-warning mt-2" *ngIf="register.submitted && email.invalid">
                         <div *ngIf="name.errors?.['required']">
-                          Email is required
+                          * Email is Must be required and valid
+                        </div>
+                        <div *ngIf="name.errors?.['pattern']">
+                          * Email is Must be required and valid
                         </div>
 
 
+
                        </div>
+
 
                     </div>
                   </div>
@@ -69,12 +78,17 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-phone fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="form3Example1c" class="form-control" required placeholder="Enter Your Phone"
+                      <input type="text"  class="form-control" pattern="^01[0-2]\d{1,8}$" required placeholder="like: 01236547854 "
                       [(ngModel)]="model.phone" name="phone" #phone="ngModel"/>
-                      <div class="alert alert-danger" *ngIf="register.submitted && email.invalid">
+                      <div class="alert alert-warning mt-2" *ngIf="register.submitted && phone.invalid">
                         <div *ngIf="name.errors?.['required']">
-                          Phone is required
+                          * Phone is required and valid
                         </div>
+                        <div *ngIf="name.errors?.['pattern']">
+                          * Phone is invalid
+                        </div>
+
+
 
 
                        </div>
@@ -87,7 +101,7 @@
                     <div class="form-outline flex-fill mb-0">
                       <input type="password" id="form3Example4c" class="form-control" required placeholder="Enter Your Password"
                       [(ngModel)]="model.password" name="password" #password="ngModel" />
-                      <div class="alert alert-danger" *ngIf="register.submitted && email.invalid">
+                      <div class="alert alert-warning mt-2" *ngIf="register.submitted && password.invalid">
                         <div *ngIf="name.errors?.['required']">
                           Password is required
                         </div>

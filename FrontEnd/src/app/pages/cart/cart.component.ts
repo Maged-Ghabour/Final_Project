@@ -19,12 +19,13 @@ export class CartComponent implements OnInit {
       this.products = res;
       this.grandTotal = this.CartService.getTotalPrice();
 
+
     })
   }
   removeItem(index:any){
     console.log(index)
-    this.products.splice(index, 1)
-    // this.CartService.removeCartItem(product)
+    // this.products.splice(index, 1)
+    this.CartService.removeCartItem(index)
 
   }
   emptycart(){

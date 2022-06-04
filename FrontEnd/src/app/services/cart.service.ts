@@ -24,6 +24,7 @@ export class CartService {
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
     console.log(this.cartItemList)
+    localStorage.setItem("card", JSON.stringify(this.cartItemList ))
   }
   getTotalPrice() : number{
     let grandTotal = 0;
@@ -48,6 +49,7 @@ export class CartService {
   }
   removeAllCart(){
     this.cartItemList = []
+    localStorage.setItem("card", JSON.stringify([]))
     this.productList.next(this.cartItemList);
   }
 }

@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit {
 
   addtocart(product:any){
     this.CartService.addtoCart(product)
+
     this.toastr.warning(' تم إضافة المنتج  بداخل السلة', 'إضافة', {
       "positionClass": 'toast-top-right'
     });
