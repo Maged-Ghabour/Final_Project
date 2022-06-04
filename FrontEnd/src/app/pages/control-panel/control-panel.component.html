@@ -1,0 +1,60 @@
+<!-- <div class="container">
+  <h2 class="text-center text-primary my-4">All Products</h2>
+  <div class="row">
+      <div class="col-12 col-md-4 mb-4" *ngFor="let product of products">
+        <div class="card h-100 shadow-lg p-3 mb-5 bg-body rounded " >
+            <img src="http://localhost:3000/{{product.productImage}}" alt="" class="card-img-top h-100">
+
+
+            <div class="card-body">
+                <h5 class="card-title">{{product.productTitle}}</h5>
+                <p class="card-text">{{product.productdesc}}</p>
+                <a href="" class="btn btn-danger">Delete Product</a>
+                <a href="" class="btn btn-primary mx-1">Edit Product</a>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+ -->
+
+
+
+ <div class="table-responsive container">
+  <table class="table table-bordered my-5 align-middle ">
+          <thead class="thead-dark">
+              <tr >
+                  <th scope="col" style="width:5%" class="text-center">#</th>
+                  <th scope="col" style="width:20%" class="text-center">ID</th>
+                  <th scope="col" style="width:25%" class="text-center"> Name</th>
+                  <th scope="col" style="width:25%" class="text-center"> Description</th>
+                  <th scope="col" style="width:10%" class="text-center">Image</th>
+                  <th scope="col" style="width:15%" class="text-center">Action</th>
+              </tr>
+          </thead>
+          <tbody>
+
+
+              <tr class="text-center" *ngFor="let product of products ; let i = index">
+                  <td>{{i+1}}</td>
+                  <td>{{product._id}}</td>
+                  <td>{{product.productTitle}}</td>
+                  <td>{{product.productdesc}}</td>
+                  <td>
+                    <img src="http://localhost:3000/{{product.productImage}}" alt="" class="card-img-top" >
+                  </td>
+
+                  <td class="text-center">
+
+
+                      <a (click)="delPro(product._id)" class="btn btn btn-danger mx-1 "><i class="fa-solid fa-trash "></i>Delete</a>
+                      <a href="" class="btn btn btn-success"><i class="fa-solid fa-pen-to-square " ></i>Edit </a>
+                  </td>
+              </tr>
+
+
+
+          </tbody>
+  </table>
+
+</div>

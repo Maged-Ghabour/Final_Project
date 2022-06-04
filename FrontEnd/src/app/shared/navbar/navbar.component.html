@@ -1,0 +1,43 @@
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg bg-dark navbar-dark ">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/home"><img src="../../../assets/final-logo-1-231x358.png" style="width:40px;height:40px ;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+
+          <li class="nav-item">
+            <a class="nav-link mx-4 text-white" aria-current="page" routerLink="home" routerLinkActive="active">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link mx-4 text-white" aria-current="page" routerLink="login" routerLinkActive="active" *ngIf="!global.isLogin">Login</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link mx-4 text-white" aria-current="page" routerLink="singup" routerLinkActive="active" *ngIf="!global.isLogin"> Signup </a>
+          </li>
+
+
+
+
+          <button class="btn btn-warning" routerLink="cart">
+                <i  class="fas fa-cart-plus"> </i>
+                <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+          </button>
+
+          <button class="btn btn-danger ms-3"  *ngIf="global.isLogin" (click)="handleLogOut()">
+            <i class="fa-solid fa-right-from-bracket" ></i>
+              logout
+          </button>
+
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+

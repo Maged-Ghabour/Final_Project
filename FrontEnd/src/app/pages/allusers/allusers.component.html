@@ -1,0 +1,86 @@
+<div class="container-fluid slidebar">
+  <div class="row flex-nowrap ">
+      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-3  min-vh-100">
+              <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto  text-decoration-none link-light">
+                  <span class="fs-5 d-none d-sm-inline">Menu</span>
+              </a>
+              <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start " id="menu">
+                  <li class="nav-item">
+                      <a routerLink="../dashboard"  routerLinkActive="text-danger" class="nav-link align-middle px-0 ">
+                        <i class="fa-solid fa-house"></i> <span class="ms-1 d-none d-sm-inline" routerLinkActive="text-danger" >Home</span>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link align-middle px-0 " routerLink="../add-product" routerLinkActive="text-danger ">
+                      <i class="fa-solid fa-add"></i>  <span class="ms-1 d-none d-sm-inline " routerLinkActive="text-danger ">Add Product</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link align-middle px-0  " routerLink="../allusers" routerLinkActive="text-danger">
+                    <i class="fa-solid fa-table"></i>  <span class="ms-1 d-none d-sm-inline" routerLinkActive="text-danger">All Users</span>
+                  </a>
+              </li>
+
+                  <li>
+                      <a  routerLink="../orders" class="nav-link px-0" routerLinkActive="text-danger">
+                        <i class="fa-solid fa-cart-shopping"></i> <span class="ms-1 d-none d-sm-inline" routerLinkActive="text-danger">Orders</span></a>
+                  </li>
+
+              </ul>
+              <hr>
+
+          </div>
+      </div>
+      <div class="col py-3">
+
+          <!-- Start All Users -->
+
+
+
+ <div class="table-resposive container">
+  <table class="table table-bordered my-5 align-middle ">
+          <thead>
+              <tr>
+                  <th style="width:calc(100% / 6)" class="text-center">ID</th>
+                  <th style="width:calc(100% / 6)" class="text-center"> Name</th>
+                  <th style="width:calc(100% / 6)" class="text-center"> Email</th>
+                  <th style="width:calc(100% / 6)" class="text-center">Phone</th>
+                  <th style="width:calc(100% / 6)" class="text-center">Age</th>
+                  <th style="width:calc(100% /6)" class="text-center">Action</th>
+              </tr>
+          </thead>
+          <tbody>
+
+
+              <tr *ngFor="let user of users">
+                  <td>{{user._id}}</td>
+                  <td>{{user.name}}</td>
+                  <td>{{user.email}}</td>
+                  <td>{{user.phone}}</td>
+                  <td>{{user.age}}</td>
+
+
+                  <td class="text-center">
+                      <a href="" class="btn btn-sm btn-warning">Show</a>
+                      <a href="" class="btn btn-sm btn-danger mx-1 ">Delete</a>
+                      <a href="" class="btn btn-sm btn-success">Edit</a>
+                  </td>
+              </tr>
+
+
+
+          </tbody>
+  </table>
+
+</div>
+
+          <!-- End  All Users -->
+
+
+
+
+      </div>
+  </div>
+</div>
+

@@ -1,0 +1,10 @@
+
+.active{
+  background-color:#354259;
+  transition: all 0.6s;
+  border-radius: 15px;
+  padding: 7px;
+}
+.active:hover{
+  transform: scale(1.1);
+}
